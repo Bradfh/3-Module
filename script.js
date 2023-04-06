@@ -1,8 +1,55 @@
+let textUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+let textLower = "abcdefghijklmnopqrstuvwxyz".split('');
+let textNum = "1234567890".split('');
+let textChar = '!@#$%^&*?'.split('');
+let newPassword = '';
+let megaArray = '';
+let upper = "";
+let lower = "";
+let number = "";
+let char = "";
+
+
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+function generatePassword() {
+let passwordLength = "";
+passwordLength = prompt("How long would you like your password to be?  Please enter a number between 8 and 128.");
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Please enter a valid length for your password.  Choose a number between 8 and 128");
+    generatePassword();
+  } else {
+    upper = confirm("Would you like to include upper case letters?");
+    if (upper) {
+      megaArray = megaArray.concat(textUpper);
+    }
+    lower = confirm("Would you like to include lower case letters?");
+    if (lower) {
+      megaArray = megaArray.concat(textLower)
+    }
+    number = confirm("Would you like to include numbers?");
+    if (number) {
+      megaArray = megaArray.concat(textNum);
+    }
+    char = confirm("Would you like to include special characters?");
+    if (char) {
+      megaArray = megaArray.concat(textChar);
+    }
+    for (let i = 0; i < passwordLength; i++) {
+      newPassword += megaArray[Math.floor(Math.random() * (megaArray.length))];
+    } 
+    return newPassword;
+  } 
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -16,16 +63,6 @@ function writePassword() {
 
 
 
-function generatePassword() {
-
-  let textUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-  let textLower = "abcdefghijklmnopqrstuvwxyz".split('');
-  let textNum = "1234567890".split('');
-  let textChar = '!@#$%^&*()?.,+-'.split('');
-  let newPassword = '';
-  let megaArray = []; //how though??
-
-}
 
 
   //Need the following variables:
