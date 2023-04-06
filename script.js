@@ -1,22 +1,33 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+
 
 function generatePassword() {
+
+  let textUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+  let textLower = "abcdefghijklmnopqrstuvwxyz".split('');
+  let textNum = "1234567890".split('');
+  let textChar = '!@#$%^&*()?.,+-'.split('');
+  let newPassword = '';
+  let megaArray = []; //how though??
+
+}
+
+
   //Need the following variables:
   // selected length of the password
   //array of lowercase letters
@@ -45,19 +56,8 @@ function generatePassword() {
   // IF pushing to a mega-array, remember to set the array back to an empty array at the start of the process!
   // return the generate password
 
-}
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 
 
