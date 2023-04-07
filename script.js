@@ -3,11 +3,8 @@ let textLower = "abcdefghijklmnopqrstuvwxyz".split('');
 let textNum = "1234567890".split('');
 let textChar = '!@#$%^&*?'.split('');
 let newPassword = '';
-let megaArray = '';
-let upper = "";
-let lower = "";
-let number = "";
-let char = "";
+let megaArray = [];
+
 
 
 // Assignment Code
@@ -22,6 +19,10 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword() {
+let upper = "";
+let lower = "";
+let number = "";
+let char = "";
 let passwordLength = "";
 passwordLength = prompt("How long would you like your password to be?  Please enter a number between 8 and 128.");
   if (passwordLength < 8 || passwordLength > 128) {
@@ -55,9 +56,7 @@ passwordLength = prompt("How long would you like your password to be?  Please en
 function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 
