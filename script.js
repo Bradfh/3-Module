@@ -1,9 +1,9 @@
-let textUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+/* let textUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 let textLower = "abcdefghijklmnopqrstuvwxyz".split('');
 let textNum = "1234567890".split('');
 let textChar = '!@#$%^&*?'.split('');
-let newPassword = '';
-let megaArray = [];
+let newPassword = [];
+let megaArray = []; */
 
 
 
@@ -23,15 +23,15 @@ let textUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 let textLower = "abcdefghijklmnopqrstuvwxyz".split('');
 let textNum = "1234567890".split('');
 let textChar = '!@#$%^&*?'.split('');
-let newPassword = '';
+let newPassword = [];
 let megaArray = [];
-let upper = false;
+/* let upper = false;
 let lower = false;
 let number = false;
-let char = false;
+let char = false; */
 let passwordLength = "";
 passwordLength = prompt("How long would you like your password to be?  Please enter a number between 8 and 128.");
-  if (passwordLength < 8 || passwordLength > 128) {
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Please enter a valid length for your password.  Choose a number between 8 and 128");
     generatePassword();
   } else {
@@ -52,43 +52,13 @@ passwordLength = prompt("How long would you like your password to be?  Please en
       megaArray = megaArray.concat(textChar);
     }
     for (let i = 0; i < passwordLength; i++) {
-      newPassword += megaArray[Math.floor(Math.random() * (megaArray.length))];
-    } 
-    if (upper) {
-      for (var x=0; x < password.length; x++) {
-        if(textUpper.indexOf(newPassword[x]) > -1) {
-          upper = true;
-        }
-      }
-    }
-    if (lower) {
-      for (var y=0; y < password.length; y++) {
-        if (textLower.indexOf(newPassword[y]) > -1) {
-          lower = true;
-        }
-      }
-    }
-    if (char) {
-      for (var z=0; z < password.length; z++) {
-        if (textChar.indexOf(newPassword[z]) > -1) {
-          char = true;
-        }
-      }
-    }
-    if (number) {
-      for (var n=0; n < password.length; n++) {
-        if (textNum.indexOf(newPassword[n]) > -1) {
-          number=true;
-        }
-      }
-    }
-    return newPassword;
-  } 
-}
+      newPassword += megaArray[Math.floor(Math.random(i) * (megaArray.length))];
+      } 
+  } return newPassword
+  }
 
-function passwordCriteria(password,Upper,isLower,isChar,isNumber){
 
-}
+
 
 // Write password to the #password input
 function writePassword() {
@@ -96,6 +66,7 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
 
 
 
@@ -162,4 +133,3 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page */
-
