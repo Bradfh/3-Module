@@ -10,6 +10,8 @@ N/A
     
 ## Usage/Examples
 
+https://bradfh.github.io/Brads-Password-Generator/
+
 Click the red 'Generate Password' button to initiate the generator.
 
 You will then be presented with a series of prompts allowing you to specify your password parameters.
